@@ -19,6 +19,7 @@ public class JobFieldData<T extends JobField> {
     public T findById(int id) {
         for (T item : allFields) {
             if (item.getId() == id)
+                System.out.println(item);
                 return item;
         }
 

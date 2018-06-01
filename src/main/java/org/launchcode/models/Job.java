@@ -24,11 +24,11 @@ public class Job {
 
         this();
 
-        name = aName;
-        employer = aEmployer;
-        location = aLocation;
-        positionType = aPositionType;
-        coreCompetency = aSkill;
+        this.name = aName;
+        this.employer = aEmployer;
+        this.location = aLocation;
+        this.positionType = aPositionType;
+        this.coreCompetency = aSkill;
 
     }
 
@@ -36,40 +36,40 @@ public class Job {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String aname) {
+        this.name = aname;
     }
 
     public Employer getEmployer() {
         return employer;
     }
 
-    public void setEmployer(Employer employer) {
-        this.employer = employer;
+    public void setEmployer(Employer aemployer) {
+        this.employer = aemployer;
     }
 
     public Location getLocation() {
         return location;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setLocation(Location alocation) {
+        this.location = alocation;
     }
 
     public PositionType getPositionType() {
         return positionType;
     }
 
-    public void setPositionType(PositionType positionType) {
-        this.positionType = positionType;
+    public void setPositionType(PositionType apositionType) {
+        this.positionType = apositionType;
     }
 
     public CoreCompetency getCoreCompetency() {
         return coreCompetency;
     }
 
-    public void setCoreCompetency(CoreCompetency coreCompetency) {
-        this.coreCompetency = coreCompetency;
+    public void setCoreCompetency(CoreCompetency acoreCompetency) {
+        this.coreCompetency = acoreCompetency;
     }
 
     public int getId() {

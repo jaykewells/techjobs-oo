@@ -11,6 +11,8 @@ public class JobField {
 
     public JobField() {
         id = nextId;
+        System.out.println("Initializing new Job Field Object");
+        System.out.println(id);
         nextId++;
     }
 
@@ -36,6 +38,7 @@ public class JobField {
     }
 
     public int getId() {
+        System.out.println(id);
         return id;
     }
 

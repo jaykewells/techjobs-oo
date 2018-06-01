@@ -27,6 +27,12 @@
             </div>
         </div>
     </div>
-
+    <table th:fragment="job-card" class="job-listing" th:each="job : ${jobs}">
+        <tr th:each="row : ${job}">
+            <td th:text="${#strings.capitalizeWords(row.key)}"></td>
+            <td th:unless="${row.key} == 'name'"><a th:text="${row.value}" th:href="@{/list/jobs(column=${row.key}, value=${row.value})}" ></a></td>
+            <td th:if="${row.key} == 'name'" th:text="${row.value}"></td>
+        </tr>
+    </table>
 </body>
 </html>

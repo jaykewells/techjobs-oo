@@ -52,11 +52,19 @@ public class JobDataImporter {
                 String coreCompStr = record.get("core competency");
                 String posTypeStr = record.get("position type");
 
+                //This section creates the appropriate JobField object for each individual info type.
                 Employer emp = jobData.getEmployers().findByValue(empStr);
                 if (emp == null) {
                     emp = new Employer(empStr);
                     jobData.getEmployers().add(emp);
                 }
+                /**
+                 * Process for these methods:
+                 * Employer emp = ....
+                 * This line attempts to find a match in the "Database" or adds it if it doesn't exist.
+                 *  if emp == null {...}
+                 *  This block recreates the object if it doesn't exist, and then adds it to the Employers list.
+                 */
 
                 Location loc = jobData.getLocations().findByValue(locStr);
                 if (loc == null) {
@@ -76,6 +84,7 @@ public class JobDataImporter {
                     jobData.getCoreCompetencies().add(coreComp);
                 }
 
+                //Finally, after checking if each field exists or not, and adding it, creates a Job object with the data.
                 Job newJob = new Job(record.get("name"), emp, loc, posType, coreComp);
 
                 jobData.add(newJob);
